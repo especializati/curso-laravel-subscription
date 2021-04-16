@@ -61,11 +61,16 @@ form.addEventListener('submit', async (e) => {
     if (error) {
         alert('Errrrrrou')
         console.log(error)
-    } else {
-        alert('deu certo!!!!')
-        console.log(setupIntent)
+
+        return;
     }
 
-    // form.submit()
+    let token = document.createElement('input')
+    token.setAttribute('type', 'hidden')
+    token.setAttribute('name', 'token')
+    token.setAttribute('value', setupIntent.payment_method)
+    form.appendChild(token)
+
+    form.submit()
 })
 </script>
