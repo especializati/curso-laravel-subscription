@@ -33,9 +33,6 @@ class SubscriptionController extends Controller
 
     public function premium()
     {
-        if (!auth()->user()->subscribed('default'))
-            return redirect()->route('subscriptions.checkout');
-
         return view('subscriptions.premium');
     }
 }
