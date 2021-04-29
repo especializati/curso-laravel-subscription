@@ -20,7 +20,9 @@
 
             @include('home._partials.features')
 
-            @include('home._partials.plans')
+            @include('home._partials.plans', [
+                'plans' => $plans
+            ])
 
             @include('home._partials.contact')
         </main>

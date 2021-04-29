@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function index()
+    public function index(Plan $plan)
     {
-        return view('home.index');
+        $plans = $plan->with('features')->get();
+
+        return view('home.index', compact('plans'));
     }
 }
