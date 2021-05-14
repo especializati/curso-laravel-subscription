@@ -3880,7 +3880,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return _this.messageFail = 'Falha ao enviar contato';
       })["finally"](function () {
-        return _this.preloader = false;
+        _this.preloader = false;
+
+        _this.reset();
       });
     },
     reset: function reset() {

@@ -74,7 +74,11 @@ export default {
             axios.post('/api/contact', this.formData)
                     .then(response => this.messageSuccess = 'Contato Enviado com Sucesso')
                     .catch(error => this.messageFail = 'Falha ao enviar contato')
-                    .finally(() => this.preloader = false)
+                    .finally(() => {
+                        this.preloader = false
+
+                        this.reset()
+                    })
         },
 
         reset () {
